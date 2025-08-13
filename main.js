@@ -60,11 +60,10 @@ async function init() {
 }
 
 async function loop() {
-    if (webcam.canvas) {
-        webcam.update();
-        await predict();
-        window.requestAnimationFrame(loop);
-    }
+    const ctx = webcam.canvas.getContext('2d');
+    ctx.drawImage(video, 0, 0, webcam.canvas.width, webcam.canvas.height);
+    await predict();
+    window.requestAnimationFrame(loop);
 }
 
 async function predict() {
