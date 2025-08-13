@@ -11,13 +11,20 @@
 </head>
 <body>
     <video id="webcam" autoplay playsinline muted></video>
+    <div id="image-container"></div>
 
     <div class="ui-overlay">
         
+        <button id="switch-camera-button" class="control-button hidden">🔄</button>
+
         <div id="status-screen">
             <h1>Visor IA</h1>
-            <p id="status-message">Apunta con la cámara para identificar objetos.</p>
-            <button id="start-button">Iniciar Visor</button>
+            <p id="status-message">Elige una opción para comenzar.</p>
+            <div class="button-group">
+                <button id="start-camera-button">Usar Cámara</button>
+                <button id="upload-image-button">Subir Imagen</button>
+            </div>
+            <input type="file" id="image-upload-input" accept="image/*" style="display: none;">
         </div>
 
         <div id="results-container"></div>
